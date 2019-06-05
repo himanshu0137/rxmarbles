@@ -11,6 +11,7 @@ function renderOperatorLabel(label) {
   let style = merge({
     fontWeight: '400',
     fontSize: `${fontSize}rem`,
+    color: 'black'
   }, fontCode);
   return span('.operatorLabel', { style }, label);
 }

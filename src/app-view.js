@@ -8,7 +8,7 @@ import { renderOperatorsMenu } from './components/operators-menu';
 const rxjsVersion = RXJS_VERSION; // webpack constant
 const rxjsGithubUrl = 'https://github.com/ReactiveX/rxjs';
 
-const containerWidth = { width: '1060px' };
+const containerWidth = { width: '820px' };
 const flexMain = { flex: '0 0 820px' };
 
 function renderGithubRibbon() {
