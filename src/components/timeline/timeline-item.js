@@ -24,7 +24,7 @@ function intent(elementClass, DOMSource, isDraggable$) {
   const isHighlighted$ = getPausable$(
     isDraggable$, Observable.merge(startHighlight$, stopHighlight$))
     .startWith(false)
-    .publishReplay(1).refCount();
+    .publishReplay(1).refCount().map(a => false);
 
   const timeChange$ = element.events('mousedown')
     .map(path(['currentTarget', 'parentElement']))

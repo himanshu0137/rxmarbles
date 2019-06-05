@@ -55,7 +55,7 @@ export function appView(sandboxDOM$) {
   return sandboxDOM$
     .map((sandboxDOM) =>
       div({ style: merge(containerWidth, { margin: '0 auto' }) }, [
-        renderSvgDropshadow(),
+        // renderSvgDropshadow(),
         // renderGithubRibbon(),
         // renderHeader(),
         renderContent(sandboxDOM),
