@@ -34,7 +34,7 @@ function renderHeader() {
 
 function renderContent(sandboxDOM) {
   return div({ style: flex }, [
-    div({ style: flex1 }, [renderOperatorsMenu()]),
+    // div({ style: flex1 }, [renderOperatorsMenu()]),
     div({ style: flexMain }, [sandboxDOM]),
   ]);
 }
@@ -56,10 +56,10 @@ export function appView(sandboxDOM$) {
     .map((sandboxDOM) =>
       div({ style: merge(containerWidth, { margin: '0 auto' }) }, [
         renderSvgDropshadow(),
-        renderGithubRibbon(),
-        renderHeader(),
+        // renderGithubRibbon(),
+        // renderHeader(),
         renderContent(sandboxDOM),
-        renderFooter(),
+        // renderFooter(),
       ]),
     );
 }

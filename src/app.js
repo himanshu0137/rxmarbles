@@ -9,13 +9,12 @@ import { appModel } from './app-model';
 import { appView } from './app-view';
 
 
-function main(sources) {
-  const route$ = appModel();
+function main(sources, route) {
   const sandbox = Sandbox(sources);
 
   const sinks = {
     DOM: appView(sandbox.DOM),
-    store: Observable.merge(route$, sandbox.data)
+    store: Observable.merge(route, sandbox.data)
       .scan(merge, {}),
   };
 
@@ -27,7 +26,14 @@ function dummyDriver(initialValue) {
   return (value$) => value$.remember().startWith(initialValue);
 }
 
-run(main, {
-  DOM: makeDOMDriver('#app-container'),
-  store: dummyDriver({}),
-});
+window.renderDiagram = function (selector = '#app-container', opName, inputs) {
+  if(!opName) return;
+  const router = appModel(opName, inputs);
+  const runner = driver => main(driver, router.route);
+  run(runner, {
+    DOM: makeDOMDriver(selector),
+    store: dummyDriver({}),
+  });
+  return router.change;
+}
+

@@ -3,7 +3,9 @@
   "version": "2.0.0",
   "author": "Andre Staltz",
   "contributors": [
-    { "name": "Alan Thai" }
+    {
+      "name": "Alan Thai"
+    }
   ],
   "repository": {
     "type": "git",
